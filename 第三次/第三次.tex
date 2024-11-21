@@ -1,0 +1,61 @@
+\documentclass[]{article}
+\usepackage{ctex}
+\usepackage{amsmath,amssymb}
+%opening
+\title{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+(1)由条件中的级数知$\forall \epsilon>0,\exists N>0,\forall n>N:$
+$$\sum_{k=n}^{+\infty}\mu(A_k)<\epsilon$$故:
+$$\mu(\limsup\limits_{n\rightarrow \infty}A_n)=\mu(\bigcap_{l=1}^{+\infty}\bigcup_{k=l}^{+\infty}A_k)\leq \mu(\bigcup_{k=n}^{+\infty}A_k)\leq\sum_{k=n}^{+\infty}\mu(A_k)\leq\epsilon$$
+由$\epsilon$的任意性即知结果.\\
+(2)熟知$x\in \limsup\limits_{n\rightarrow \infty}A_n\iff x$属于无穷多个$A_n$\\
+$x\in \liminf\limits_{n\rightarrow \infty}A_n\iff x$不属于有限多个$A_n$.\\
+故$\limsup\limits_{n\rightarrow \infty}A_n\backslash\liminf\limits_{n\rightarrow \infty}A_n$是由既属于无穷多个$A_n$也不属于无穷多个$A_n$的$x$组成.
+而$\forall n>0$这个集合显然都是$\bigcup_{k=n}^{+\infty}A_{k+1}\backslash A_k$的子集.
+由级数和类似第一问的论证知$\mu(\limsup\limits_{n\rightarrow \infty}A_n\backslash\liminf\limits_{n\rightarrow \infty}A_n)=0$.
+
+
+\section{}
+\noindent(1)由$g$连续知$\forall B \in \mathcal{B}(\mathbb{R}),g^{-1}(B)\in \mathcal{B}(\mathbb{R})$,又由$f$可测知$f^{-1}g^{-1}(B)$可测,故$gf$可测.\\
+(2)由$f$单调知$\forall a,\{f(x)<a\}$是形如$\{x<b\}$或$\{x>b\}$或全集的集合,总之为可测集.\\
+(3)熟知可测函数的差是可测函数,故$\{x:|f_m(x)-f_n(x)|<\frac{1}{k}\}$是可测集.故
+\begin{equation}
+	\begin{aligned}
+		&\{x:f_n(x)converge\}\\=&
+		\{\forall k>0,\exists N>0,\forall m,n>N,|f_m(x)-f_n(x)|<\frac{1}{k}\}
+		\\=&\bigcap_{k=1}^{+\infty}\bigcup_{N=1}^{+\infty}\bigcap_{m,n=N+1}^{+\infty}\{x:|f_m(x)-f_n(x)|<\frac{1}{k}\}
+	\end{aligned}
+\end{equation}
+是可测集.\\
+(4)\begin{equation}
+	\begin{aligned}
+		&\{x:f'(x)<a\}\\=&
+		\{x:\lim\limits_{r\rightarrow 0}\frac{f(x+r)-f(x)}{r}<a\}\\=&
+		\{x:\exists N>0,\forall n>N,f(x+\frac{1}{n})-f(x)<\frac{a}{n}\}\\=&
+		\bigcup_{N=1}^{+\infty}\bigcap_{n=N+1}^{+\infty}\{x:f(x+\frac{1}{n})-f(x)<\frac{a}{n}\}
+	\end{aligned}
+\end{equation}
+是可测集.
+\section{}
+\noindent(1)令$E_n=\{x:2^n\leq |f(x)|<2^{n+1}\}$,则$$\bigcup_{n=-\infty}^{+\infty}E_n=\{x:f(x)\neq0\}$$
+故若设$$a_n=\int_{E_n}|f|\mathrm{d}\mu,$$则$$\sum_{n=-\infty}^{+\infty}a_n=\Vert f\Vert_1.$$所以$\forall\epsilon>0,\exists N>0$使得$\forall n>N$,$$|\Vert f\Vert_1-\sum_{n=-N}^{N}a_n|<\epsilon.$$令$F_N=\bigcup_{n=-N}^{N}E_n$,只用证这是有限测度集即可.而$$\mu(E_n)\leq2^{-n}\int_{E_n}|f|\mathrm{d}\mu\leq2^{-n}\Vert f\Vert_1<+\infty,$$故得证.\\
+(2)令$A_n=\{x:n-1\leq f(x)<n\},a_n=\int_{A_n}|f|\mathrm{d}\mu$,
+则$$\sum_{n=1}^{+\infty}a_n=\int_{A_n}|f|\mathrm{d}\mu<+\infty,$$
+故$\forall\epsilon,\exists N>0$使得$$\int_{\{|f(x)|\geq N-1\}}|f|\mathrm{d}\mu=\sum_{n=N}^{+\infty}a_n<\frac{\epsilon}{2}.$$令$\delta=\frac{\epsilon}{2N},B_N=\bigcup_{k=N}^{+\infty}A_n.\forall \mu(E)<\delta$有:
+\begin{equation}
+	\begin{aligned}	\int_{E}|f|\mathrm{d}\mu&=\int_{E\cap B_N}|f|\mathrm{d}\mu+\int_{E\backslash B_N}|f|\mathrm{d}\mu\\&\leq\frac{\epsilon}{2}+(N-1)\mu(E)\\&<
+		\frac{\epsilon}{2}+\frac{(N-1)\epsilon}{2N}\\&<\epsilon
+	\end{aligned}
+\end{equation}
+\\
+(3)$$|\{f(x)>\lambda\}|\lambda\leq\int_{\{f(x)>\lambda\}}f\mathrm{d}\mu\leq\Vert f\Vert_1$$反之不然,令$f(x)=\frac{1}{x}$,则$|\{f(x)>\lambda\}\|=\frac{1}{\lambda}$,但$f$不属于$L^1(X)$.\\
+(4)由$$\int|\sum_{n=1}^{+\infty}f_n|\mathrm{d}\mu\leq\sum_{n=1}^{+\infty}\int|f_n|\mathrm{d}\mu<\infty$$知其是可积函数.\\
+由题设收敛级数知$\forall\epsilon>0,\exists N>0,\forall n>N,\sum_{k=n}^{+\infty}\int|f_n|\mathrm{d}\mu<\epsilon.$故$\forall n>N$有$$|\int\sum_{k=1}^{+\infty}f_k\mathrm{d}\mu-\sum_{k=1}^{n-1}\int f_k\mathrm{d}\mu|=|\int\sum_{k=n}^{+\infty}f_k\mathrm{d}\mu|\leq\sum_{k=n}^{+\infty}\int|f_n|\mathrm{d}\mu<\epsilon,$$由极限定义即知.
+\section{}
+\end{document}

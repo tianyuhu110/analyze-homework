@@ -1,0 +1,43 @@
+\documentclass[]{article}
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%opening
+\title{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+\noindent (1)一方面:$$\mu^*(A\cup B)\leq \mu^*(A)+\mu^*(B)=\mu^*(B)$$
+不等式另一边显然.另一方面:
+$$\mu^*(B)\leq \mu^*(B\backslash A)+\mu^*(A)=\mu^*(B\backslash A)$$
+不等式另一边显然.\\
+(2)$$\mu(E\cap(A_i\cup A_j))=\mu(E\cap(A_i\cup A_j)\cap A_i)+\mu(E\cap(A_i\cup A_j)\backslash A_i)=\mu(E\cap A_i)+\mu(E\cap A_j),$$故
+$$\mu(E\cap(\bigcup_{j=1}^{n}A_j))=\sum_{j=1}^{n}(E\cap A_j)$$
+两侧取极限即得.
+\section{}
+\noindent 一方面$\forall F\subset E$:$$\mu(F)\leq\mu_+(F)\leq\mu_+(E),$$
+取上确界即得$"\geq"$.另一方面:设$\mu$的正集和负集分别为$A,B$,
+$$\mu_+(E)=\mu_+(A\cap E)=\mu(A\cap E)\leq sup\{\mu(F):F\subset E,F\in \Sigma\}$$
+综上即得,负部同理可证.
+(2)设$A,B$分别为$\mu$的正部,负部,等式右侧记为$\alpha$.
+$$|\mu|(E)=|\mu(E\cap A)|+|\mu(E\cap B)|\leq\alpha$$
+另一方面对任意两两不交可测集族$\{E_i\}_{i=1}^{n}$:
+$$\sum_{i=1}^{n}|\mu(E_i)|\leq\sum_{i=1}^{n}|\mu|(E_i)=|\mu|(\cup_{i=1}^{n}E_i)=|\mu|(E)$$
+两边取上确界即得.
+\section{}
+\noindent 第一个等价:
+$\Rightarrow$:设$A,B$分别为$\mu$的正部,负部.
+$$|\nu|(E)=0\implies|\nu|(E\cap A)=|\nu|(E\cap B)=0\implies\mu_+(E)=\mu_-(E)=0$$
+$\Leftarrow$:
+$$|\nu|(E)=0\implies\mu_+(E)=\mu_-(E)=0\implies\mu(E)=0$$
+第二个等价:
+$\Rightarrow$:
+$$|\nu|(E)=0\implies\mu_+(E)=\mu_-(E)=0\implies|\mu|(E)=0$$
+$\Leftarrow$:
+$$|\nu|(E)=0\implies|\mu|(E)=0\implies\mu_+(E)=\mu_-(E)=0$$
+\end{document}

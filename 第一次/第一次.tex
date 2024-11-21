@@ -1,0 +1,31 @@
+\documentclass{ctexart}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{mathrsfs}
+\begin{document}
+	\section{第一题}
+	\subsection{}
+	记$\mathbb{R}$上的开集族为$\mathcal{A}$,显然$\mathcal{F}\subset\mathcal{A}$,且$\sigma$代数一定是$\sigma$环,故$\Sigma(\mathcal{F})\subset\Sigma(\mathcal{A})\subset\mathcal{B}(\mathbb{R})$.另一方面,由$\mathbb{R}=\bigcup_{n=-\infty}^{+\infty}(n,n+1)$知$\mathbb{R}\in\Sigma(\mathcal{F})$,故$\forall A\in\Sigma(\mathcal{F}),A^c=\mathbb{R}-A\in\Sigma(\mathcal{F})$,所以$\Sigma(\mathcal{F})$实际上是一个$\sigma$代数.又熟知$\mathbb{R}$上开集是至多可数个开集的并,故一定属于$\Sigma(\mathcal{F})$,从而$\mathcal{B}(\mathbb{R})\subset\Sigma(\mathcal{F})$.
+	\subsection{}
+\section{}
+\subsection{}
+$\mu(E)=\lim\limits_{n\rightarrow\infty}\mu_n(E)\geq0$.
+设$E\cap F=\varnothing$,则$\forall n,\mu_n(E\cup F)=\mu_n(E)+\mu_n(F)$.
+所以$\mu(E\cup F)=\lim\limits_{n\rightarrow\infty}\mu_n(E\cup F)=\lim\limits_{n\rightarrow\infty}(\mu_n(E)+\mu_n(F))=\lim\limits_{n\rightarrow\infty}\mu_n(E)+\lim\limits_{n\rightarrow\infty}\mu_n(F)=\mu(E)+\mu(F)$.
+反例:
+\subsection{}
+由测度定义只用证对两两不交的$\{A_n\}$有另一边的不等式成立.而对任意正整数$N$有:
+$$\sum_{n=1}^{N}\mu(A_n)=\mu(\cup_{n=1}^NA_n)\leq \mu(\cup_{n=1}^{+\infty}A_n)$$
+上式令$N\rightarrow \infty$即证.
+\section{}
+设$\liminf\limits_{n\rightarrow\infty}\mu(A_n)=\alpha$,则$\forall \epsilon>0,\exists \{A_{k_n}\}$使得$\mu(A_{k_n})< \alpha+\epsilon,\forall n$.
+显然$k_n\geq n$,故$$\cap_{i>n}A_k\subset\cap_{i>n}A_{k_i}$$,进一步
+\subsection{}
+两两不交时由测度的可列可加性知成立.
+反过来,设$B_n=A_n-\cup_{k>n}A_k$,
+则易知$B_n$满足:\\
+(1)$B_i\cap B_j=\varnothing,\forall i\neq j$\\
+(2)$\cup_nB_n=\cup_nA_n$\\
+则$\mu(\cup_nA_n)=\mu(\cup_nB_n)=\sum_n\mu(B_n)\leq\sum_n\mu(A_n)$,
+结合条件知上式的不等号实际上是等号.
+故$\sum_n\mu(A_n-B_n)=0$,从而每一项都为0.所以$A_n-B_n=A_n\cap (\cup_{k>n}A_k)$是零测集,所以${A_n}$两两相交为零测集.
+\end{document}
