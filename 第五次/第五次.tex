@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{amsmath}
+\DeclareMathOperator{\supp}{supp}
+\begin{document}
+\section{}
+\noindent (1)熟知存在线性泛函$f$满足$f(x)=||x||$且$f(y)\leq||y||,\forall y\in X.$故由弱收敛知$$||x||=f(x)=\lim_{n\rightarrow\infty}f(x_{n})\leq\lim_{n\rightarrow\infty}||x_{n}||.$$\\
+(2)\\
+(3)\\
+(4)不妨设$x$就是原点,若$0\in A$结论显然成立,下设$d(x,A)>0$.
+设$m=\inf_{a\in A}||a||>0$,$\forall n>0,\exists a_n\in A$使得$m<||a_n||<m+\frac{1}{n}$.由$A$是凸集知$\frac{a_{n_1}+a_{n_2}}{2}\in A$,则有:\begin{align}
+    &m<||a_{n_1}||<m+\frac{1}{n_1},\\
+    &m<||a_{n_2}||<m+\frac{1}{n_2},\\
+    &m<||\frac{a_{n_1}+a_{n_2}}{2}||<m+\frac{1}{2n_1}+\frac{1}{2n_2}.
+\end{align}
+\begin{align}
+    ||a_{n_1}-a_{n_2}||&\leq 2||a_{n_1}||^2+2||a_{n_2}||^2-||a_{n_1}+a{n_2}||^2\\&\leq 2(m+\frac{1}{n_1})^2+2(m+\frac{1}{n_2})^2-(2m+\frac{1}{n_1}+\frac{1}{n_2})^2\\&\leq 4m(\frac{1}{n_1}+\frac{1}{n_2})+2(\frac{1}{n_1^2}+\frac{1}{n_2^2}).
+\end{align}
+故$\{a_n\}$是柯西列,由完备性知其收敛,收敛结果即为所求$a_0$.\\
+Remark:不难看出这个$a_0$还是唯一的.\\
+\section{}
+\noindent(1)设$[0,1]$上所有零测开集的并为$A$.\\
+$\forall x\in A$,$x$必属于某个零测开集$U$,故$x\notin\supp(\mu)$,从而$x\notin\supp(\mu)^{c}$,所以$A\subset \supp(\mu)^{c}$.\\
+$\forall x\in \supp(\mu)^{c}$,$x$必属于某个零测开集,故$x\in A$,所以$\supp(\mu)^{c}\subset A$,综上即证.\\
+(2)"$\Rightarrow$":设$x\in\supp(\mu)$,$f\in C_{c}([0,1])$且$f(x)>0$,由$f$的连续性,存在$x$的开邻域$U$使得$f$在$U$上大于某个正数$\varepsilon$,从而:$$\int_{[0,1]}f(x)\,d\mu\geq\int_{U}f(x)\,d\mu >\varepsilon\mu(U)>0$$\\
+"$\Leftarrow$":设$x$满足题设条件,设$U$是$[0,1]$内任意包含$x$的开集,$\forall\varepsilon>0$,令$f_{\varepsilon}(y)=(1-\frac{d(y,U)}{\varepsilon})^{+}$,显然$0\leq f_{\varepsilon}\leq 1$,$f_{\varepsilon}\in C_{c}([0,1])$,且$f_{\varepsilon}(x)=1>0$.另一方面设$\delta>0$使得$B(x,\delta)\subset U$,令$f(y)=(1-\frac{d(x,y)}{\delta})^{+}$,易见$f$也满足上述条件且$f\leq f_{\varepsilon},\forall\varepsilon>0$.故$$\mu(B(U,\varepsilon))=\int_{B(U,\varepsilon)}d\mu\geq\int_{B(U,\varepsilon)}f_{\varepsilon}d\mu\geq\int_{B(x,\delta)}fd\mu>0,$$在上式中令$\varepsilon\rightarrow 0$即证.\\
+(3)若不然,设紧集$K\subset\supp(\mu)$满足$\mu(K^c)=0$,而$K^c$是开集,由(1)知$K^c\subset\supp(\mu)^c$,故$\supp(\mu)\subset K$,矛盾.\\
+\end{document}
